@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Birthday Party Invitation</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background: linear-gradient(135deg, #ffecd2, #fcb69f);
+                text-align: center;
+                padding: 40px;
+            }
+
+            .invite-card {
+                background: white;
+                max-width: 600px;
+                margin: auto;
+                padding: 30px;
+                border-radius: 12px;
+                box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            }
+
+            h1 {
+                color: #e74c3c;
+                font-size: 42px;
+                margin-bottom: 10px;
+            }
+
+            h2 {
+                color: #2c3e50;
+                margin-bottom: 20px;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                line-height: 1.8;
+                font-size: 18px;
+            }
+
+            li::before {
+                content: "🎉 ";
+            }
+
+            .rsvp-button {
+                display: inline-block;
+                margin-top: 25px;
+                padding: 12px 25px;
+                background-color: #e74c3c;
+                color: white;
+                text-decoration: none;
+                border-radius: 6px;
+                font-weight: bold;
+            }
+
+            .rsvp-button:hover {
+                background-color: #c0392b;
+            }
+
+            .footer {
+                margin-top: 20px;
+                font-size: 14px;
+                color: #777;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="invite-card">
+            <h1>You're Invited!</h1>
+            <h2>Dastan's Birthday Party 🎂</h2>
+            
+            <p><strong>The details:</strong></p>
+            <ul>
+                <li>Date: February 10, 2026</li>
+                <li>Time: 6:00 PM</li>
+                <li>Location: Sunset Cafe, Main Street 12</li>
+                <li>Dress Code: Casual & Fun</li>
+            </ul>
+
+            <p>Join us for food, music, games, and great company. It won't be the same without you!</p>
+
+            <a href="mailto:example@email.com?subject=RSVP%20Birthday%20Party" class="rsvp-button">
+                RSVP Now
+            </a>
+
+            <div class="footer">
+                Please respond by February 5
+            </div>
+        </div>
+        
+    </body>
+</html>

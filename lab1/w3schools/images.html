@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>HTML Image</h2>
+    <img src="img_chania.png" alt="Flowers in Chania" width = "460" height = "345">
+</body>
+</html>
+
+Background Image on an HTML element:
+1.
+<p style="background-image: url('img_girl.jpg');"></p>
+
+2.
+<style>
+p {
+  background-image: url('img_girl.jpg');
+}
+</style>
+
+
+
+Background Image on a Page:
+<style>
+body {
+  background-image: url('img_girl.jpg');
+}
+</style>
+
+Background Repeat:
+<style>
+body {
+  background-image: url('example_img_girl.jpg');
+}
+</style>
+
+to avoid:
+<style>
+body {
+  background-image: url('example_img_girl.jpg');
+  background-repeat: no-repeat;
+}
+</style>
+
+When to use the Picture Element
+There are two main purposes for the <picture> element:
+
+1. Bandwidth
+If you have a small screen or device, it is not necessary to load a large image file. The browser will use the first <source> element with matching attribute values, and ignore any of the following elements.
+
+2. Format Support
+Some browsers or devices may not support all image formats. By using the <picture> element, you can add images of all formats, and the browser will use the first format it recognizes, and ignore any of the following elements.
+
+Example
+The browser will use the first image format it recognizes:
+
+<picture>
+  <source srcset="img_avatar.png">
+  <source srcset="img_girl.jpg">
+  <img src="img_beatles.gif" alt="Beatles" style="width:auto;">
+</picture>
