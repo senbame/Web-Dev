@@ -1,0 +1,445 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family:Mona Sans,-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+.container{
+    margin: 0 auto;       
+    display:flex;
+    flex-direction: column;
+}
+/*Верхняя часть*/
+.top{
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    margin-bottom:100px
+}
+.top h1{
+    font-size: 60px;
+}
+.top p{
+    text-align: center;
+    opacity: 70%;
+    margin-top: 0;
+    width: 65%;
+}
+#top_button{
+    background-color: black;
+    color: white;
+    padding: 14px;
+    padding-top: 17px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-top: 10px;
+    width: 14%;
+    height: 50px;
+    font-weight: 400;
+    background: linear-gradient(rgb(68, 67, 67) , rgb(0,0,0));
+    cursor: pointer;
+}
+#top_button:hover{
+    background: linear-gradient(rgb(106, 105, 105), rgb(0,0,0));
+}
+/*Центральная часть*/
+.middle{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    justify-content: center; 
+    gap: 30px; 
+}
+
+
+.free, .team {
+    height: 1100px;
+    width: 25%;
+    border: 1px solid #d0d7de;
+    border-radius: 12px;
+    background: white;
+    padding: 34px;
+    text-align: center;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.15);
+    position: relative;
+}
+
+
+.enterprise {
+    height: 1100px;
+    background: white;
+    border-radius: 12px;
+    padding: 34px;
+    width: 100%;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    text-align: center;
+    position: relative;
+}
+
+.enterprise-wrapper {
+    width: 25%;
+    border: 3px solid #0969da;
+    border-radius: 16px;
+    background: #0969da;
+    padding: 42px 6px 6px 6px; /* сверху место под плашку */
+    position: relative;
+    display: flex;
+    margin-top: -45px;
+    height: 1155px;
+
+}
+.free, .team, .enterprise {
+    position: relative;
+    z-index: 1; /* поднимаем контентный слой */
+}
+
+.free::after,
+.team::after,
+.enterprise::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 66%;
+    background-color: #f1f1f1; 
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    z-index: -1; 
+}
+
+
+
+.recommended {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #0969da;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 10px 0;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+}
+
+.description{
+    margin-top: -20px;
+    opacity: 80%;
+}
+
+.price{
+    margin-top: -5px;
+    font-size: 50px;
+    font-weight: 500;
+    word-spacing: -10px;
+}
+.price sup{
+    font-size: 20px;
+    opacity: 70%;
+    font-weight: lighter;
+    word-spacing: normal;
+}
+.usd{
+    font-size: 25px;
+}
+.free_button{
+    width: 100%;
+    padding: 12px;
+    font-size: 17px;
+    background:none;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: border 0.25s ease;
+}
+.team_button{
+    width: 100%;
+    padding: 12px;
+    font-size: 17px;
+    background: linear-gradient(rgb(68, 67, 67) , rgb(0,0,0));
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.25s ease; 
+
+}
+.team_button:hover{
+    background: linear-gradient(rgb(106, 105, 105), rgb(0,0,0));
+}
+.free_button:hover{
+    border: 1.7px solid black;
+}
+.enterprise_buttons{
+    display: flex;
+    gap: 10px; /* расстояние между кнопками */
+}
+.enterprise_button{
+    flex: 1;                 /* одинаковая ширина */
+    padding: 12px 0;         /* одинаковая высота */
+    font-size: 17px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.enterprise_button1{
+    border: none;
+    background: linear-gradient(rgb(68, 67, 67), rgb(0,0,0));
+    color: white;   
+    transition: background 0.25s ease; 
+}
+.enterprise_button1:hover{
+    background: linear-gradient(rgb(106, 105, 105), rgb(0,0,0));
+}
+.enterprise_button2{
+    border: 1px solid lightgray;
+    background: white;
+    color: black;
+    transition: border 0.25s ease-in;
+}
+.enterprise_button2:hover{
+    border: 1.7px solid black;
+}
+.features{
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    row-gap: 15px;
+    color: #59636e;
+}
+.included{
+    margin-top: 70px;
+    margin-bottom: -50px;
+    position: relative;
+    padding-left: 22px;
+}
+.addon{
+    color:blue;
+    font-size: 16px;
+    margin-bottom: -20px;
+}
+
+#long_feature{
+    text-align: left;
+    font-size: 13px;
+    line-height: 20px;
+}
+.features button {
+    border: 0;
+    background: none;
+    outline: none;
+    cursor: pointer;
+
+    position: relative;      
+    padding-left: 22px;  
+    text-align: left;
+    font-size: 14px;
+    color:#59636e;
+}
+
+
+.features button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    width: 5px;
+    height: 5px;
+    border-top: 2px solid #59636e;
+    border-left: 2px solid #59636e;
+    transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.included::before{
+    content: "→";
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-40%) rotate(-180deg);
+    font-size: 25px;
+}
+
+.freefpr{
+    text-align: left;
+    margin-top: -10px;
+    margin-bottom: 0;
+    margin-left: 22px;
+    cursor: pointer;
+}
+
+/*Нижняя часть*/
+.bottom{
+    margin-left: 157px;
+    margin-right: 157px;
+}
+.bottom h1{
+    text-align: center;
+    font-size: 64px;
+    opacity: 90%;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+.upper_floor{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    gap: 30px;
+}
+.upper_floor h2{
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.upper_floor p{
+    font-size: 16px;
+    line-height: 1.6;
+    color: #57606a;
+}
+
+.first, .second, .third{
+    flex: 1;
+    max-width: 420px;
+    border: 1px solid #d0d7de;  
+    border-radius: 12px;       
+    padding: 32px 24px;
+    background: #ffffff;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.first:hover,.second:hover,.third:hover{
+    box-shadow: 0 8px 24px rgba(140,149,159,0.2);
+    transform: scale(1.05)
+}
+.lower_floor{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+.lower_floor h2{
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.lower_floor p{
+    font-size: 16px;
+    line-height: 1.6;
+    color: #57606a;
+}
+.fourth , .fifth , .sixth{
+    flex: 1;
+    max-width: 420px;
+    border: 1px solid #d0d7de;  
+    border-radius: 12px;       
+    padding: 32px 24px;
+    background: #ffffff;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+} 
+.fourth:hover,.fifth:hover,.sixth:hover{
+    box-shadow: 0 8px 24px rgba(140,149,159,0.2);
+    transform: scale(1.05)
+}
+.first, .second, .third,
+.fourth, .fifth, .sixth {
+    position: relative;
+}
+
+/* Наконечник стрелки */
+.first::after{
+    content: '';
+    position: absolute;
+    top: 83%;
+    right: 270px;
+    width: 6px;
+    height: 6px;
+    border-top: 1.5px solid black;
+    border-right: 1.5px solid black;
+    transform: translateY(-50%) rotate(45deg); 
+    transition: transform 0.3ms ease;
+}
+.second::after, .third::after,
+.fourth::after, .fifth::after, .sixth::after {
+    content: '';
+    position: absolute;
+    top: 83%;
+    right: 290px;
+    width: 6px;
+    height: 6px;
+    border-top: 1.5px solid black;
+    border-right: 1.5px solid black;
+    transform: translateY(-50%) rotate(45deg); 
+    transition: transform 0.3s ease;
+}
+
+/* Линия стрелки */
+.first::before{
+    content: '';
+    position: absolute;
+    top: 83%;
+    right: 269px;
+    width: 0px; 
+    height: 1.9px;
+    background: black;
+    transform: translateY(50%);
+    transition: width 0.2s ease;
+} 
+.second::before, .third::before,
+.fourth::before, .fifth::before, .sixth::before {
+    content: '';
+    position: absolute;
+    top: 83%;
+    right: 288px;
+    width: 0px; 
+    height: 1.9px;
+    background: black;
+    transform: translateY(50%);
+    transition: width 0.2s ease;
+}
+
+
+.first:hover::before, .second:hover::before, .third:hover::before,
+.fourth:hover::before, .fifth:hover::before, .sixth:hover::before {
+    width: 9px; 
+}
+
+.first:hover::after, .second:hover::after, .third:hover::after,
+.fourth:hover::after, .fifth:hover::after, .sixth:hover::after {
+    transform: translateY(-50%) rotate(45deg) translateX(2px);
+}
+
+#icon1,#icon2,#icon4{
+    width: 60px;
+}
+#icon3 , #icon5,#icon6{
+    width:40px;
+}
+
+
+
+
+
