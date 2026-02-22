@@ -50,13 +50,19 @@ form{
     cursor: pointer;
     opacity: 0.85;
 }
-#toDoList{
+#toDoList {
     list-style: none;
     padding: 0;
-    margin:20px auto 0;
+    margin: 20px auto 0;
     width: 100%;
     max-width: 800px;
+    max-height: 400px;
+    overflow-y: auto;
+
+    column-count: 1;
+    column-gap: 20px;
 }
+
 
 #toDoList li{
     display: flex;
@@ -76,7 +82,6 @@ form{
     color: #e74a3b;
     font-size: 18px;
     cursor: pointer;
-    padding: 6px;
     transition: transform 0.2s ease, color 0.2s ease, opacity 0.2s ease;
 }
 

@@ -2,11 +2,12 @@ const form = document.querySelector("form");
 const input = document.querySelector(".tasker");
 const list = document.getElementById("toDoList");
 
+
 form.addEventListener("submit", function (e) {
     e.preventDefault(); 
-
+    
     const taskText = input.value.trim();
-    if (taskText === "") return;
+
 
     // Создание элементов
     const li = document.createElement("li");
@@ -27,8 +28,14 @@ form.addEventListener("submit", function (e) {
 
 
     // Событие: выполнено
-    checkbox.addEventListener("change", function () {
-        span.classList.toggle("done");
+    checkbox.addEventListener("click", function () {
+        let input = prompt("Do you wanna delete?");
+        if (input === "yes"){
+            list.removeChild(li);
+        }
+        else{
+            return;
+        }
     });
 
     // Событие: удалить
