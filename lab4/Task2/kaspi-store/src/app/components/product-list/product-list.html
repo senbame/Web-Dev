@@ -1,0 +1,69 @@
+<div class="searcher">
+  <a class="main" href="https://kaspi.kz/shop/almaty/">Магазин</a>
+   <input
+    type="text"
+    placeholder="Поиск товаров"
+  />
+  <button><img src="https://img.icons8.com/m_outlined/512/228BE6/search.png" alt="lupa"></button>
+</div>
+<div class = "product-categories">
+  <button>ВСЕ КАТЕГОРИИ</button>
+  <button>СМАРТФОНЫ</button>
+  <button>ЧЕХЛЫ</button>
+  <button>ЗАРЯДНЫЕ УСТРОЙСТВА</button>
+  <button>РАДИОТЕЛЕФОНЫ</button>
+  <button>АКСЕССУАРЫ ДЛЯ СМАРТЧАСОВ</button>
+</div>
+<div class="grid">
+  @for (product of products; track product.id) {
+    <div class="card">
+
+     <a class="product-link"
+        [href]="product.link"
+        target="_blank"
+        rel="noopener">
+
+        <img [src]="product.image"
+            [alt]="product.name" />
+
+        <span class="product-name">
+          {{ product.name }}
+        </span>
+
+      </a>
+      <div class="rating">
+        <div class="stars-background">
+            ★★★★★
+        </div>
+        <div class="stars-filled" [style.width.%]="(product.rating / 5 ) * 100">
+            ★★★★★
+        </div>
+      </div>
+      <p class="description">{{ product.description }}</p>
+      <div class="pricings">
+        <div class="price">
+            <p>Цена</p>
+            {{ product.price | number }} ₸
+        </div>
+        <div class="installment">
+            <p>В рассрочку</p>
+            <span class="month-price">
+            {{ getInstallment(product.price, 3) | number }} ₸
+            </span>
+            <span class="months">× 3</span>
+        </div>
+        <div class="buttons">
+          <button class = "share-button" (click)="shareWhatsApp(product)">
+            <img src="whatsapp.png" alt="Share on WhatsApp">
+          </button>
+          
+          <button class = "share-button" (click)="shareTelegram(product)">
+            <img src="telegram.png" alt="Share on Telegram">
+          </button>
+      </div>
+      </div>
+      
+
+    </div>
+  }
+</div>
