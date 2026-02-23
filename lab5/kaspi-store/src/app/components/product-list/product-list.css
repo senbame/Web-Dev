@@ -1,0 +1,79 @@
+.searcher{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 0 10px 150px;
+}
+.searcher input{
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-color: white;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+  outline: none;
+}
+.searcher input:focus{
+  border: 1px solid #000; 
+}
+.searcher button img{
+  width: 100%;
+  max-width: 20px;
+  padding: 7px;
+}
+.searcher button{
+  border: 1px solid #ddd;
+  background-color: white;
+  transition: background-color 0.3s ease;
+}
+.main{
+  width: 100%;
+  max-width: 100px;
+  padding: 7px;
+  text-decoration: none;
+  text-align: center;
+  color: #333;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+
+}
+.searcher button:hover , .main:hover{
+  cursor: pointer;
+  background-color: #eee; 
+  border: 1px solid #000;
+}
+.product-categories{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+}
+.product-categories button{
+  padding: 15px;
+  font-size: 20px;
+  font-weight: 200;
+  font-family: Montserrat, sans-serif;
+  border: 1px solid #ddd;
+  background-color: white;
+  transition: background-color 0.3s ease;
+  color: #333;
+}
+.product-categories button:hover{
+  cursor: pointer;
+  background-color: #eee;
+  border-top: 2px solid black;
+}
+.product-categories button.active{
+  border-top: 2px solid #000;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 40px;
+  padding: 20px;
+  
+}
+

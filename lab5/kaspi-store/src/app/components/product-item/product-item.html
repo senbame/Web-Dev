@@ -1,0 +1,57 @@
+<div class="card">
+     <a class="product-link"
+        [href]="product.link"
+        target="_blank"
+        rel="noopener">
+
+        <img [src]="product.image"
+            [alt]="product.name" />
+
+        <span class="product-name">
+          {{ product.name }}
+        </span>
+
+      </a>
+      <div class="rating">
+        <div class="stars-background">
+            ★★★★★
+        </div>
+        <div class="stars-filled" [style.width.%]="(product.rating / 5 ) * 100">
+            ★★★★★
+        </div>
+      </div>
+      <p class="description">{{ product.description }}</p>
+      <div class="pricings">
+        <div class="price">
+            <p>Цена</p>
+            {{ product.price | number }} ₸
+        </div>
+        <div class="installment">
+            <p>В рассрочку</p>
+            <span class="month-price">
+            {{ getInstallment(product.price, 3) | number }} ₸
+            </span>
+            <span class="months">× 3</span>
+        </div>
+        <div class="buttons">
+          <button class = "share-button" (click)="shareWhatsApp(product)">
+            <img src="whatsapp.png" alt="Share on WhatsApp">
+          </button>
+          
+          <button class = "share-button" (click)="shareTelegram(product)">
+            <img src="telegram.png" alt="Share on Telegram">
+          </button>
+        </div>
+       </div>
+       <div class="new_buttons">
+            <div class="likes">
+                <button (click)="like()">❤</button>
+                <span>{{ product.likes }}</span>
+            </div>
+            <div class="delete">
+                <button (click)="delete()">🗑</button>
+            </div>
+        </div>
+      
+
+</div>

@@ -1,0 +1,24 @@
+<div class="searcher">
+  <a class="main" href="https://kaspi.kz/shop/almaty/">Магазин</a>
+   <input
+    type="text"
+    placeholder="Поиск товаров"
+  />
+  <button><img src="https://img.icons8.com/m_outlined/512/228BE6/search.png" alt="lupa"></button>
+</div>
+<div class = "product-categories">
+  <button (click)="selectCategory(0)" [class.active]="selectedCategoryId === 0">ВСЕ КАТЕГОРИИ</button>
+  <button (click)="selectCategory(1)" [class.active]="selectedCategoryId === 1">СМАРТФОНЫ</button>
+  <button (click)="selectCategory(3)" [class.active]="selectedCategoryId === 3">ЧЕХЛЫ</button>
+  <button (click)="selectCategory(2)" [class.active]="selectedCategoryId === 2">РАДИОТЕЛЕФОНЫ</button>
+  <button (click)="selectCategory(4)" [class.active]="selectedCategoryId === 4">АКСЕССУАРЫ</button>
+</div>
+<div class="grid">
+  @for (product of products; track product.id) {
+    <app-product-item
+      [product]="product"
+      (liked)="like($event)"
+      (deleted)="delete($event)">
+    </app-product-item>
+  }
+</div>
