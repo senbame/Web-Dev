@@ -14,8 +14,9 @@ export class ProductItem {
 
   @Output() liked = new EventEmitter<Product>();
   @Output() deleted = new EventEmitter<Product>();
-
+  isLikes : boolean = false;
   like() {
+    this.isLikes = !this.isLikes;
     this.liked.emit(this.product);
   }
 

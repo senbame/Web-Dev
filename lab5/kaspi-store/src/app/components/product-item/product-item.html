@@ -45,7 +45,7 @@
        </div>
        <div class="new_buttons">
             <div class="likes">
-                <button (click)="like()">❤</button>
+                <button (click)="like()" [class.active]="product.likes === 1">❤</button>
                 <span>{{ product.likes }}</span>
             </div>
             <div class="delete">

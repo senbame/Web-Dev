@@ -138,10 +138,6 @@
     font-size: 20px;
     font-weight: 200;
 }
-.likes button:hover{
-    transform: scale(1.1);
-    color: red
-}
 .likes button:active{
     transform: scale(1.1);
     color: red
@@ -157,4 +153,7 @@
 }
 .delete button:hover{
     transform: scale(1.1);
+}
+.likes button.active{
+    color: red;
 }

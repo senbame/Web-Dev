@@ -12,7 +12,14 @@
   <button (click)="selectCategory(3)" [class.active]="selectedCategoryId === 3">ЧЕХЛЫ</button>
   <button (click)="selectCategory(2)" [class.active]="selectedCategoryId === 2">РАДИОТЕЛЕФОНЫ</button>
   <button (click)="selectCategory(4)" [class.active]="selectedCategoryId === 4">АКСЕССУАРЫ</button>
+  <button (click) = "sortAsc()">
+    Sort by price (asc) 
+  </button>
+  <button (click) = "sortDesc()">
+    Sort by price (desc)
+  </button>
 </div>
+
 <div class="grid">
   @for (product of products; track product.id) {
     <app-product-item
@@ -21,4 +28,8 @@
       (deleted)="delete($event)">
     </app-product-item>
   }
+  @if(products.length === 0) {
+  <p class="no-products">Нет товаров в этой категории.</p>
+}
 </div>
+

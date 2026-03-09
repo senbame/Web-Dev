@@ -37,9 +37,13 @@ export class ProductList {
   }
 
   delete(product: Product) {
-    if(confirm("Вы уверены, что хотите удалить этот товар?")){
       this.productService.deleteProduct(product.id);
       this.selectCategory(this.selectedCategoryId);
-    }
+  }
+  sortAsc() {
+    this.products = [...this.products].sort((a, b) => a.price - b.price);
+  }
+  sortDesc() {
+    this.products = [...this.products].sort((a, b) => b.price - a.price);
   }
 }

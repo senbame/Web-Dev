@@ -160,14 +160,14 @@ export class ProductService {
     },
     {
       id: 13,
-      name: 'Panasonic KX-TG 1611 RUH',
+      name: 'Panasonic KX-TG1611CAH',
       description: 'Беспроводная система для домашнего использования с функцией диспетчеризации.',
-      price: 20998,
+      price: 20934,
       installment: 4735,
       rating: 4.9,
       likes: 0,
       categoryId: 2, 
-      image: 'https://resources.cdn-kaspi.kz/img/m/p/h2e/hcc/68568459804702.jpg?format=preview-large',
+      image: 'https://resources.cdn-kaspi.kz/img/m/p/h37/h2e/87106185035806.png?format=preview-large',
       link: 'https://kaspi.kz/shop/p/panasonic-kx-tg-1611-ruh-103186917/?c=750000000'
     },
     {
@@ -265,11 +265,19 @@ export class ProductService {
   getProductsByCategory(categoryId: number): Product[] {
     return this.products.filter(p => p.categoryId === categoryId);
   }
-
+  increaseRating(){
+    const product = this.products.find(p => p.rating === 5.0);
+    if (product) {
+      product.rating = product.rating + 1;
+    }
+  }
   likeProduct(productId: number): void {
     const product = this.products.find(p => p.id === productId);
     if (product) {
       product.likes++;
+    }
+    if (product && product.likes > 1) {
+      product.likes = 0;
     }
   }
 
