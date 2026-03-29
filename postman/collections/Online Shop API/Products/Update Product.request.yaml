@@ -1,0 +1,19 @@
+$kind: http-request
+name: Update Product
+method: PUT
+url: '{{base_url}}/api/products/{{product_id}}/'
+order: 4000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "Updated Laptop",
+      "price": 1099.99,
+      "description": "An updated powerful laptop",
+      "count": 5,
+      "is_active": true,
+      "category": 1
+    }

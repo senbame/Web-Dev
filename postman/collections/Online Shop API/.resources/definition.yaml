@@ -1,0 +1,8 @@
+$kind: collection
+name: Online Shop API
+description: API collection for the Online Shop backend (Django REST Framework).
+  Base URL is http://localhost:8000.
+variables:
+  base_url: http://localhost:8000
+  category_id: ""
+  product_id: ""

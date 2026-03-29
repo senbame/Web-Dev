@@ -1,0 +1,3 @@
+$kind: collection
+name: Products
+description: Endpoints for managing products.
