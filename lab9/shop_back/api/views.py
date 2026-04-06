@@ -16,6 +16,7 @@ class CategoryViewSet(viewsets.ModelViewSet):
         products = Product.objects.filter(category=category)
         serializer = ProductSerializer(products, many=True)
         return Response(serializer.data)
+    
 
 
 class ProductViewSet(viewsets.ModelViewSet):

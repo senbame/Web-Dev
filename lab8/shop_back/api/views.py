@@ -5,21 +5,21 @@ from .models import Product, Category
 
 # All List of Products
 def product_list(request):
+    min_price = request.GET.get('min_price')
+    max_price = request.GET.get('max_price')
+
     products = Product.objects.all()
-    data = []
 
-    for p in products:
-        data.append({
-            "id": p.id,
-            "name": p.name,
-            "price": p.price,
-            "description": p.description,
-            "count": p.count,
-            "is_active": p.is_active,
-            "category": p.category.id
-        })
+    
+    if min_price:
+        products = products.filter(price__gte=min_price)
 
+    if max_price:
+        products = products.filter(price__lte=max_price)
+
+    data = list(products.values())
     return JsonResponse(data, safe=False)
+
 
 # One Product
 
@@ -78,3 +78,6 @@ def products_by_category(request, id):
         })
 
     return JsonResponse(data, safe=False)
+
+
+
